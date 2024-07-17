@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
-<!-- <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="duo"> -->
+
 <robot name="duo">
   <!-- Link Definitions -->
   <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.02083333333333333" ixy="0" ixz="0" iyy="0.010833333333333334" iyz="0" izz="0.03083333333333333"/>
+    </inertial>
     <visual>
       <geometry>
         <box size="0.5 0.7 0.1"/>
@@ -19,6 +24,11 @@
   </link>
 
   <link name="left_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0002708333333333334" ixy="0" ixz="0" iyy="0.0002708333333333334" iyz="0" izz="0.0005000000000000001"/>
+    </inertial>  
     <visual>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -35,6 +45,11 @@
   </link>
 
   <link name="right_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0002708333333333334" ixy="0" ixz="0" iyy="0.0002708333333333334" iyz="0" izz="0.0005000000000000001"/>
+    </inertial>  
     <visual>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -51,9 +66,14 @@
   </link>
 
   <link name="caster_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="3.291666666666667e-05" ixy="0" ixz="0" iyy="3.291666666666667e-055" iyz="0" izz="6.250000000000001e-05"/>
+    </inertial>
     <visual>
       <geometry>
-        <cylinder radius="0.060" length="0.02"/>
+        <cylinder radius="0.050" length="0.02"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -61,12 +81,17 @@
     </visual>
     <collision>
       <geometry>
-        <cylinder radius="0.060" length="0.02"/>
+        <cylinder radius="0.050" length="0.02"/>
       </geometry>
     </collision>
   </link>
 
   <link name="caster_mount">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="8.666666666666668e-05" ixy="0" ixz="0" iyy="8.666666666666668e-05" iyz="0" izz="0.00016666666666666672"/>
+    </inertial>  
     <visual>
       <geometry>
         <box size="0.1 0.1 0.02"/>
@@ -81,28 +106,28 @@
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <origin xyz="-0.277 -0.07 -0.07" rpy="0 1.5708 0"/>
+    <origin xyz="-0.277 -0.13 -0.07" rpy="0 1.5708 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <origin xyz="0.277 -0.07 -0.07" rpy="0 1.5708 0"/>
+    <origin xyz="0.277 -0.13 -0.07" rpy="0 1.5708 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="caster_mount_joint" type="continuous">
     <parent link="base_link"/>
     <child link="caster_mount"/>
-    <origin xyz="0 0.25 -0.07" rpy="0 0 0"/>
+    <origin xyz="0 0.25 -0.062" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="caster_wheel_joint" type="continuous">
     <parent link="caster_mount"/>
     <child link="caster_wheel"/>
-    <origin xyz="0 0 -0.03" rpy="0 1.5708 0"/>
+    <origin xyz="0 0 -0.06" rpy="0 1.5708 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 

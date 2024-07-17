@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<robot name="duo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Define some properties for reusability -->
+  <xacro:property name="base_length" value="0.5"/>
+  <xacro:property name="base_width" value="0.7"/>
+  <xacro:property name="base_height" value="0.1"/>
+  <xacro:property name="wheel_radius" value="0.1"/>
+  <xacro:property name="wheel_length" value="0.05"/>
+  <xacro:property name="wheel_mass" value="0.1"/>
+  <xacro:property name="caster_wheel_radius" value="0.060"/>
+  <xacro:property name="caster_wheel_length" value="0.02"/>
+  <xacro:property name="caster_mount_size" value="0.1 0.1 0.02"/>
+  <xacro:property name="caster_mount_mass" value="0.2"/>
+  <xacro:property name="green_color" value="0 1 0 1"/>
+  <xacro:property name="black_color" value="0 0 0 1"/>
+  <xacro:property name="gray_color" value="0.5 0.5 0.5 1"/>
+
+  <!-- Define reusable macros -->
+  <xacro:macro name="base_link" params="name length width height color">
+    <link name="${name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <box size="${length} ${width} ${height}"/>
+        </geometry>
+        <material name="color">
+          <color rgba="${color}"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${length} ${width} ${height}"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="wheel_link" params="name radius length color mass">
+    <link name="${name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${mass}"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <cylinder radius="${radius}" length="${length}"/>
+        </geometry>
+        <material name="color">
+          <color rgba="${color}"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${radius}" length="${length}"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <!-- Base Link -->
+  <xacro:base_link name="base_link" length="${base_length}" width="${base_width}" height="${base_height}" color="${green_color}"/>
+
+  <!-- Left Wheel -->
+  <xacro:wheel_link name="left_wheel" radius="${wheel_radius}" length="${wheel_length}" color="${black_color}" mass="${wheel_mass}"/>
+  
+  <!-- Right Wheel -->
+  <xacro:wheel_link name="right_wheel" radius="${wheel_radius}" length="${wheel_length}" color="${black_color}" mass="${wheel_mass}"/>
+
+  <!-- Caster Wheel -->
+  <xacro:wheel_link name="caster_wheel" radius="${caster_wheel_radius}" length="${caster_wheel_length}" color="${black_color}" mass="0.05"/>
+
+  <!-- Caster Mount -->
+  <link name="caster_mount">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${caster_mount_mass}"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="${caster_mount_size}"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="${gray_color}"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint Definitions -->
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="-0.277 -0.07 -0.07" rpy="0 1.5708 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0.277 -0.07 -0.07" rpy="0 1.5708 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="caster_mount_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster_mount"/>
+    <origin xyz="0 0.25 -0.07" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="caster_wheel_joint" type="continuous">
+    <parent link="caster_mount"/>
+    <child link="caster_wheel"/>
+    <origin xyz="0 0 -0.03" rpy="0 1.5708 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
+
