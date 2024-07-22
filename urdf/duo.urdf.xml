@@ -2,12 +2,15 @@
 
 <robot name="duo">
   <!-- Link Definitions -->
-  <link name="base_link">
+  <link name="dummy_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.5"/>
       <inertia ixx="0.02083333333333333" ixy="0" ixz="0" iyy="0.010833333333333334" iyz="0" izz="0.03083333333333333"/>
     </inertial>
+  </link>  
+  
+  <link name="base_link">
     <visual>
       <geometry>
         <box size="0.5 0.7 0.1"/>
@@ -103,6 +106,12 @@
   </link>
 
   <!-- Joint Definitions -->
+  <joint name="base_link_to_dummy_link" type="fixed">
+    <parent link="base_link" />
+    <child link="dummy_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint> 
+
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
