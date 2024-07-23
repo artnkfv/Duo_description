@@ -2,6 +2,15 @@
 
 <robot name="duo">
   <!-- Link Definitions -->
+  <link name="base_reference">
+    <!-- This link is an invisible reference link -->
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
   <link name="dummy_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -72,7 +81,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.05"/>
-      <inertia ixx="3.291666666666667e-05" ixy="0" ixz="0" iyy="3.291666666666667e-055" iyz="0" izz="6.250000000000001e-05"/>
+      <inertia ixx="3.291666666666667e-05" ixy="0" ixz="0" iyy="3.291666666666667e-05" iyz="0" izz="6.250000000000001e-05"/>
     </inertial>
     <visual>
       <geometry>
@@ -106,6 +115,12 @@
   </link>
 
   <!-- Joint Definitions -->
+  <joint name="base_reference_to_base_link" type="fixed">
+    <parent link="base_reference" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.17" rpy="0 0 0" /> <!-- Adjust the height here -->
+  </joint>
+
   <joint name="base_link_to_dummy_link" type="fixed">
     <parent link="base_link" />
     <child link="dummy_link" />
