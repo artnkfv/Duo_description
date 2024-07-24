@@ -30,7 +30,7 @@ class StatePublisher(Node):
         # Message declarations
         self.odom_trans = TransformStamped()
         self.odom_trans.header.frame_id = 'odom'
-        self.odom_trans.child_frame_id = 'base_link'
+        self.odom_trans.child_frame_id = 'base_reference'
 
         self.x = 0.0
         self.y = 0.0
@@ -51,16 +51,13 @@ class StatePublisher(Node):
                 dt = 1.0 / 30.0  # assuming a 30 Hz update rate
 
                 # Update the robot's position and orientation
-                v_left = 0.1  # left wheel linear velocity in m/s
-                v_right = 0.1  # right wheel linear velocity in m/s
+                v = 0.1  # linear velocity in m/s
+                omega = 0.1  # angular velocity in rad/s
 
-                # Compute the robot's linear and angular velocities
-                v = (v_left + v_right) / 2.0  # linear velocity
-                omega = (v_right - v_left) / self.wheel_base  # angular velocity
-
-                # Update position and orientation
                 self.x += v * cos(self.theta) * dt
                 self.y += v * sin(self.theta) * dt
+
+                
                 self.theta += omega * dt
 
                 self.odom_trans.header.stamp = now.to_msg()
@@ -69,8 +66,8 @@ class StatePublisher(Node):
                 self.odom_trans.transform.translation.z = 0.0  # Adjust z-offset if needed
                 self.odom_trans.transform.rotation = euler_to_quaternion(0, 0, self.theta)  # roll, pitch, yaw
 
-                # Update joint positions (simulate wheel rotations for differential drive)
-                wheel_angle = v * dt / self.wheel_radius
+                # Update joint positions (simulate wheel rotations for circular motion)
+                wheel_angle = v / self.wheel_radius * dt
                 caster_angle = sin(elapsed_time)
 
                 self.joint_state.position[0] += wheel_angle  # left wheel

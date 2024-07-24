@@ -19,6 +19,7 @@
   <xacro:property name="green_color" value="0 1 0 1"/>
   <xacro:property name="black_color" value="0 0 0 1"/>
   <xacro:property name="gray_color" value="0.5 0.5 0.5 1"/>
+  
 
   <!-- Define reusable macros -->
   <xacro:macro name="base_link" params="name length width height color">
