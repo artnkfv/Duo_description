@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: duo_description
+Version: 0.0.0
+Summary: Package to visualize Duo robot
+Maintainer: deadcat
+Maintainer-email: artem.nkfv@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: setuptools

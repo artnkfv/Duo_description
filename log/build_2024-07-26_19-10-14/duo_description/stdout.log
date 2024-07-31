@@ -1,0 +1,43 @@
+running egg_info
+creating build/duo_description/duo_description.egg-info
+writing build/duo_description/duo_description.egg-info/PKG-INFO
+writing dependency_links to build/duo_description/duo_description.egg-info/dependency_links.txt
+writing entry points to build/duo_description/duo_description.egg-info/entry_points.txt
+writing requirements to build/duo_description/duo_description.egg-info/requires.txt
+writing top-level names to build/duo_description/duo_description.egg-info/top_level.txt
+writing manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+reading manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build
+creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib
+creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+copying duo_description/joint_state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+copying duo_description/__init__.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+copying duo_description/state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+running install
+running install_lib
+creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/joint_state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/__init__.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/joint_state_publisher.py to joint_state_publisher.cpython-310.pyc
+byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/state_publisher.py to state_publisher.cpython-310.pyc
+running install_data
+creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index
+creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index
+creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index/packages
+copying resource/duo_description -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index/packages
+copying package.xml -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description
+creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+copying launch/urdf_visualize.launch.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+copying launch/urdf_visualize.launch.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+copying urdf/duo_robot.urdf -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description
+running install_egg_info
+Copying build/duo_description/duo_description.egg-info to /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description-0.0.0-py3.10.egg-info
+running install_scripts
+Installing state_publisher script to /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/duo_description
+writing list of installed files to '/home/deadcat/ros2_ws/src/duo_description/build/duo_description/install.log'

@@ -1,0 +1,45 @@
+[0.464s] Invoking command in '/home/deadcat/ros2_ws/src/duo_description': PYTHONPATH=/home/deadcat/ros2_ws/src/duo_description/build/duo_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/duo_description build --build-base /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build install --record /home/deadcat/ros2_ws/src/duo_description/build/duo_description/install.log --single-version-externally-managed install_data
+[0.629s] running egg_info
+[0.630s] creating build/duo_description/duo_description.egg-info
+[0.639s] writing build/duo_description/duo_description.egg-info/PKG-INFO
+[0.639s] writing dependency_links to build/duo_description/duo_description.egg-info/dependency_links.txt
+[0.639s] writing entry points to build/duo_description/duo_description.egg-info/entry_points.txt
+[0.639s] writing requirements to build/duo_description/duo_description.egg-info/requires.txt
+[0.639s] writing top-level names to build/duo_description/duo_description.egg-info/top_level.txt
+[0.639s] writing manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+[0.659s] reading manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+[0.659s] adding license file 'LICENSE'
+[0.659s] writing manifest file 'build/duo_description/duo_description.egg-info/SOURCES.txt'
+[0.659s] running build
+[0.660s] running build_py
+[0.660s] creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build
+[0.660s] creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib
+[0.660s] creating /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+[0.660s] copying duo_description/joint_state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+[0.660s] copying duo_description/__init__.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+[0.660s] copying duo_description/state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description
+[0.660s] running install
+[0.664s] running install_lib
+[0.673s] creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+[0.673s] copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/joint_state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+[0.673s] copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/__init__.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+[0.673s] copying /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build/lib/duo_description/state_publisher.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description
+[0.673s] byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/joint_state_publisher.py to joint_state_publisher.cpython-310.pyc
+[0.674s] byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/__init__.py to __init__.cpython-310.pyc
+[0.674s] byte-compiling /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description/state_publisher.py to state_publisher.cpython-310.pyc
+[0.674s] running install_data
+[0.674s] creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index
+[0.674s] creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index
+[0.674s] creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index/packages
+[0.674s] copying resource/duo_description -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/ament_index/resource_index/packages
+[0.674s] copying package.xml -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description
+[0.674s] creating /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+[0.675s] copying launch/urdf_visualize.launch.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+[0.675s] copying launch/urdf_visualize.launch.py -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description/launch
+[0.675s] copying urdf/duo_robot.urdf -> /home/deadcat/ros2_ws/src/duo_description/install/duo_description/share/duo_description
+[0.675s] running install_egg_info
+[0.685s] Copying build/duo_description/duo_description.egg-info to /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages/duo_description-0.0.0-py3.10.egg-info
+[0.685s] running install_scripts
+[0.765s] Installing state_publisher script to /home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/duo_description
+[0.765s] writing list of installed files to '/home/deadcat/ros2_ws/src/duo_description/build/duo_description/install.log'
+[0.785s] Invoked command in '/home/deadcat/ros2_ws/src/duo_description' returned '0': PYTHONPATH=/home/deadcat/ros2_ws/src/duo_description/build/duo_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/deadcat/ros2_ws/src/duo_description/install/duo_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/duo_description build --build-base /home/deadcat/ros2_ws/src/duo_description/build/duo_description/build install --record /home/deadcat/ros2_ws/src/duo_description/build/duo_description/install.log --single-version-externally-managed install_data
