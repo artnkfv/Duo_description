@@ -35,6 +35,36 @@
     </collision>
   </link>
 
+  <link name="ultrasonic_sensor">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.046 0.02 0.021"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.046 0.02 0.021"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="ultrasonic_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ultrasonic_sensor"/>
+    <origin xyz="0 0.35 0.05" rpy="0 0 0"/>
+  </joint>
+
+
   <link name="left_wheel">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -168,5 +198,24 @@
     <robot_base_frame>base_footprint</robot_base_frame>
     <update_rate>100</update_rate>
   </plugin>
+
+  <!-- Ultrasonic Sensor Plugin -->
+  
+  <plugin name="ultrasonic_sensor_plugin" filename="libgazebo_ros_range.so">
+      <ros>
+        <namespace>/</namespace>
+        <argument>sensor</argument>
+        <remapping>sensor_topic:=ultrasonic</remapping>
+      </ros>
+      <update_rate>10.0</update_rate>
+      <frameName>ultrasonic_sensor</frameName>
+      <rangeMin>0.02</rangeMin>
+      <rangeMax>4.0</rangeMax>
+      <radius>0.01</radius>
+      <alwaysOn>true</alwaysOn>
+      <visualize>true</visualize>
+  </plugin>  
+
 </gazebo>
+
 </robot>
