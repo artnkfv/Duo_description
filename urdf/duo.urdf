@@ -86,6 +86,16 @@
     </collision>
   </link>
 
+  <transmission name="left_wheel_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="left_wheel_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="left_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
   <link name="right_wheel">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -106,6 +116,16 @@
       </geometry>
     </collision>
   </link>
+
+  <transmission name="right_wheel_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="right_wheel_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="right_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
 
   <link name="caster_wheel">
     <inertial>
