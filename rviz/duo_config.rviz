@@ -7,7 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Mass Properties1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 839
   - Class: rviz_common/Selection
@@ -51,7 +51,7 @@ Visualization Manager:
       Value: true
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
-      Collision Enabled: true
+      Collision Enabled: false
       Description File: ""
       Description Source: Topic
       Description Topic:
@@ -77,6 +77,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         caster_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_rod:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -107,7 +112,7 @@ Visualization Manager:
           Value: true
       Mass Properties:
         Inertia: false
-        Mass: true
+        Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -124,6 +129,8 @@ Visualization Manager:
           Value: true
         caster_mount:
           Value: true
+        caster_rod:
+          Value: true
         caster_wheel:
           Value: true
         dummy_link:
@@ -138,14 +145,16 @@ Visualization Manager:
           Value: true
       Marker Scale: 1
       Name: TF
-      Show Arrows: true
-      Show Axes: true
+      Show Arrows: false
+      Show Axes: false
       Show Names: false
       Tree:
         odom:
           base_reference:
             base_link:
               caster_mount:
+                caster_rod:
+                  {}
                 caster_wheel:
                   {}
               dummy_link:
@@ -161,7 +170,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: base_reference
     Frame Rate: 30
   Name: root
   Tools:
@@ -204,7 +213,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 3.7233808040618896
+      Distance: 0.9988764524459839
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -219,10 +228,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.060397978872060776
+      Pitch: 0.640398383140564
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.8553850650787354
+      Yaw: 5.006745338439941
     Saved: ~
 Window Geometry:
   Displays:
