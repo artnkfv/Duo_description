@@ -22,7 +22,7 @@ class StatePublisher(Node):
 
         # Update joint names based on your URDF
         self.joint_state = JointState()
-        self.joint_state.name = ['left_wheel_joint', 'right_wheel_joint', 'caster_mount_joint', 'caster_wheel_joint']
+        self.joint_state.name = ['left_wheel_joint', 'right_wheel_joint', 'caster_mount_to_rod_joint', 'caster_wheel_joint']
 
         # Set initial positions to zero (assuming these are rotational joints)
         self.joint_state.position = [0.0, 0.0, 0.0, 0.0]
@@ -36,8 +36,8 @@ class StatePublisher(Node):
         self.y = 0.0
         self.theta = 0.0
 
-        self.wheel_radius = 0.1
-        self.wheel_base = 0.554  # distance between the left and right wheels
+        self.wheel_radius = 0.033
+        self.wheel_base = 0.14  # distance between the left and right wheels
 
         try:
             while rclpy.ok():
